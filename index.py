@@ -151,17 +151,12 @@ def clockIn(host):
 
 
 def sendMessage(msg):
-    # print(msg)
     if key:
-        res = requests.post(
-            url='https://sc.ftqq.com/' + key + '.send',
-            data={
-                'title': '速鹰666自动签到结果通知',
-                'desp': msg
-            },
-            timeout=30
-        )
-        # print(res.text)
+        url = 'http://www.pushplus.plus/send'
+        r = requests.get(url, params={'token': key,
+                                      'title': "速鹰666自动签到结果通知",
+                                      'content': msg})
+        print(f'通知推送结果：{r.status_code, r.text}')
 
 
 def main_handler(event, context):
