@@ -6,7 +6,7 @@ on:
     - cron: '0 1 * * *'
 jobs:
   build:
-    name: 签到
+    name: 苏樱签到
     runs-on: ubuntu-latest
 
     steps:
