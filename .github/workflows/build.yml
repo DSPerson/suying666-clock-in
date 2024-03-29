@@ -27,7 +27,6 @@ jobs:
           PASSWD: ${{ secrets.PASSWD }}
           KEY: ${{ secrets.PUSH_KEY }}
         run: python index.py "$EMAIL" "$PASSWD" "$KEY"
-
       - name: 4. update github repository...
         run: |
           git config --global user.email "$EMAIL"
